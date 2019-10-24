@@ -2,6 +2,8 @@
 
 Get host type
 
+```console
+# cat host_type.sh 
 grep '' /sys/hypervisor/type > /dev/null
 rc=$?
 if [ $rc -eq 0 ]; then  # Xen Srever/VM
@@ -21,3 +23,4 @@ else  # Not Xen Server
     echo "physical"
   fi
 fi
+```
